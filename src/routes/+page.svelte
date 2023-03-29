@@ -1,5 +1,5 @@
 <script>
-	import Sidebar from "$lib/sidebarAccount.svelte";
+	import Sidebar from "$lib/sidebarGuest.svelte";
     import Alarm from "$lib/alarm.svelte";
     import Add from "$lib/Add.svelte";
     import { Heading, Hr } from 'flowbite-svelte';
