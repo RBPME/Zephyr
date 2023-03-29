@@ -2,7 +2,9 @@
     import { page } from '$app/stores';
     import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, Modal, Input, Checkbox, Button, Label } from 'flowbite-svelte';
     $: activeUrl = $page.url.pathname;
+    
     let login = false;
+    let signup = false;
 </script>
 
 <Sidebar>
@@ -28,7 +30,7 @@
                 </svelte:fragment>
             </SidebarItem>
 
-            <SidebarItem label="Sign Up">
+            <SidebarItem label="Sign Up" on:click={() => signup = true}>
                 <svelte:fragment slot="icon">
                     <svg class="w-6 h-6 dark:fill-slate-200" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M730 656V526H600v-60h130V336h60v130h130v60H790v130h-60Zm-370-81q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42ZM40 896v-94q0-35 17.5-63.5T108 696q75-33 133.338-46.5 58.339-13.5 118.5-13.5Q420 636 478 649.5 536 663 611 696q33 15 51 43t18 63v94H40Zm60-60h520v-34q0-16-9-30.5T587 750q-71-33-120-43.5T360 696q-58 0-107.5 10.5T132 750q-15 7-23.5 21.5T100 802v34Zm260-321q39 0 64.5-25.5T450 425q0-39-25.5-64.5T360 335q-39 0-64.5 25.5T270 425q0 39 25.5 64.5T360 515Zm0-90Zm0 411Z"/></svg>
                 </svelte:fragment>
@@ -42,11 +44,11 @@
         <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Log ind</h3>
         <Label class="space-y-2">
             <span>Email</span>
-            <Input type="email" name="email" placeholder="navn@mail.com" required />
+            <Input type="email" name="login-email" placeholder="navn@mail.com" required />
         </Label>
         <Label class="space-y-2">
             <span>Password</span>
-            <Input type="password" name="password" placeholder="•••••" required />
+            <Input type="password" name="login-password" placeholder="••••••••••" required />
         </Label>
         <div class="flex items-start">
             <Checkbox>Husk mig</Checkbox>
@@ -54,7 +56,36 @@
         </div>
         <Button type="submit" class="w-full">Log Ind på din konto</Button>
         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Har du ikke en konto? <a href="/" class="text-blue-700 dark:text-blue-500 hover:underline">Lav en her</a>
+            Har du ikke en konto? <a href="/" class="text-blue-700 dark:text-blue-500 hover:underline" on:click={() => {signup = true; login = false;}}>Lav en her</a>
+        </div>
+    </form>
+</Modal>
+
+<Modal bind:open={signup} size="xs" autoclose={false} class="w-full">
+    <form action="#" class="flex flex-col space-y-6">
+        <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Lav en konto</h3>
+        <Label class="space-y-2">
+            <span>Email</span>
+            <Input type="email" name="signup-email" placeholder="navn@mail.com" required />
+        </Label>
+        <Label class="space-y-2">
+            <span>Brugernavn</span>
+            <Input name="signup-username" placeholder="Dit navn" required />
+        </Label>
+        <Label class="space-y-2">
+            <span>Password</span>
+            <Input type="password" name="signup-password" placeholder="••••••••••" required />
+        </Label>
+        <Label class="space-y-2">
+            <span>Bekræft password</span>
+            <Input type="password" name="repeat-password" placeholder="••••••••••" required />
+        </Label>
+        <div class="flex items-start">
+            <Checkbox>Husk mig</Checkbox>
+        </div>
+        <Button type="submit" class="w-full">Lav din konto</Button>
+        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+            Har du allerede en konto? <a href="/" class="text-blue-700 dark:text-blue-500 hover:underline" on:click={() => {signup = false; login = true;}}>Log ind her</a>
         </div>
     </form>
 </Modal>
