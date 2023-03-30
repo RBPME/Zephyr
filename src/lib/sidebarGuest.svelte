@@ -7,6 +7,63 @@
     let signup = false;
 </script>
 
+<Modal bind:open={login} size="xs" autoclose={false} class="w-full h-min">
+    <form action="#" class="flex flex-col space-y-6">
+        <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Log ind</h3>
+        <Label class="space-y-2">
+            <span>Email</span>
+            <Input type="email" name="login-email" placeholder="navn@mail.com" required />
+        </Label>
+        <Label class="space-y-2">
+            <span>Password</span>
+            <Input type="password" name="login-password" placeholder="••••••••••" required />
+        </Label>
+        <div class="flex items-start">
+            <Checkbox>Husk mig</Checkbox>
+            <a href="/" class="ml-auto text-sm text-blue-700 dark:text-blue-500 hover:underline">Glemt password?</a>
+        </div>
+        <Button type="submit" class="w-full">Log Ind på din konto</Button>
+        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+            Har du ikke en konto? <a href="/" class="text-blue-700 dark:text-blue-500 hover:underline" on:click={() => {signup = true; login = false;}}>Lav en her</a>
+        </div>
+    </form>
+</Modal>
+
+<Modal bind:open={signup} size="xs" autoclose={false} class="w-full h-min">
+    <form action="#" class="flex flex-col space-y-6 overflow-y-hidden">
+        <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Lav en konto</h3>
+        <Label class="space-y-2">
+            <span>Email</span>
+            <Input type="email" name="signup-email" placeholder="navn@mail.com" required />
+        </Label>
+        <Label class="space-y-2">
+            <span>Brugernavn</span>
+            <Input name="signup-username" placeholder="Dit navn" required />
+        </Label>
+        <Label class="space-y-2">
+            <span>Password</span>
+            <Input type="password" name="signup-password" placeholder="••••••••••" required />
+        </Label>
+        <Label class="space-y-2">
+            <span>Bekræft password</span>
+            <Input type="password" name="repeat-password" placeholder="••••••••••" required />
+        </Label>
+        <div class="flex items-start">
+            <Checkbox>Husk mig</Checkbox>
+        </div>
+        <Button type="submit" class="w-full">Lav din konto</Button>
+        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+            Har du allerede en konto? <a href="/" class="text-blue-700 dark:text-blue-500 hover:underline" on:click={() => {signup = false; login = true;}}>Log ind her</a>
+        </div>
+    </form>
+</Modal>
+
+
+
+
+
+
+
 <Sidebar class="hidden md:inline">
     <SidebarWrapper class="fixed w-64 h-screen top-0">
         <SidebarGroup>
@@ -40,7 +97,7 @@
 </Sidebar>
 
 <div class="md:hidden">
-    <BottomNav position="fixed" innerDiv="grid-cols-4">
+    <BottomNav position="fixed" innerDiv="grid-cols-4" outerDefault="w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600">
         <BottomNavItem btnName="Alarmer">
             <svg class="w-6 h-6 dark:fill-slate-200" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M479 974q-74 0-139.5-28t-114-76.5q-48.5-48.5-77-114T120 615.267q0-74.733 28.5-140T225.5 361q48.5-49 114-77T479 256q74 0 139.5 28T733 361q49 49 77 114.267t28 140Q838 690 810 755.5t-77 114Q684 918 618.5 946T479 974Zm0-357Zm121 161 42-42-130-130V416h-60v214l148 148ZM214 189l42 42L92 389l-42-42 164-158Zm530 0 164 158-42 42-164-158 42-42ZM479.043 914Q604 914 691 826.957t87-212Q778 490 690.957 403t-212-87Q354 316 267 403.043t-87 212Q180 740 267.043 827t212 87Z"/></svg>
         </BottomNavItem>
@@ -55,59 +112,3 @@
         </BottomNavItem>
     </BottomNav>
 </div>
-
-
-
-
-
-
-<Modal bind:open={login} size="xs" autoclose={false} class="w-full no-scrollbar">
-    <form action="#" class="flex flex-col space-y-6">
-        <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Log ind</h3>
-        <Label class="space-y-2">
-            <span>Email</span>
-            <Input type="email" name="login-email" placeholder="navn@mail.com" required />
-        </Label>
-        <Label class="space-y-2">
-            <span>Password</span>
-            <Input type="password" name="login-password" placeholder="••••••••••" required />
-        </Label>
-        <div class="flex items-start">
-            <Checkbox>Husk mig</Checkbox>
-            <a href="/" class="ml-auto text-sm text-blue-700 dark:text-blue-500 hover:underline">Glemt password?</a>
-        </div>
-        <Button type="submit" class="w-full">Log Ind på din konto</Button>
-        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Har du ikke en konto? <a href="/" class="text-blue-700 dark:text-blue-500 hover:underline" on:click={() => {signup = true; login = false;}}>Lav en her</a>
-        </div>
-    </form>
-</Modal>
-
-<Modal bind:open={signup} size="xs" autoclose={false} class="w-full no-scrollbar">
-    <form action="#" class="flex flex-col space-y-6">
-        <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Lav en konto</h3>
-        <Label class="space-y-2">
-            <span>Email</span>
-            <Input type="email" name="signup-email" placeholder="navn@mail.com" required />
-        </Label>
-        <Label class="space-y-2">
-            <span>Brugernavn</span>
-            <Input name="signup-username" placeholder="Dit navn" required />
-        </Label>
-        <Label class="space-y-2">
-            <span>Password</span>
-            <Input type="password" name="signup-password" placeholder="••••••••••" required />
-        </Label>
-        <Label class="space-y-2">
-            <span>Bekræft password</span>
-            <Input type="password" name="repeat-password" placeholder="••••••••••" required />
-        </Label>
-        <div class="flex items-start">
-            <Checkbox>Husk mig</Checkbox>
-        </div>
-        <Button type="submit" class="w-full">Lav din konto</Button>
-        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Har du allerede en konto? <a href="/" class="text-blue-700 dark:text-blue-500 hover:underline" on:click={() => {signup = false; login = true;}}>Log ind her</a>
-        </div>
-    </form>
-</Modal>
