@@ -5,7 +5,7 @@
 
 <Sidebar />
 
-<div class="ml-64 w-auto h-screen pt-4">
+<div class="md:ml-64 w-auto h-auto pt-4">
     <Heading tag="h1" class="text-center">Enheder</Heading>
     <Hr class="my-4 mx-auto md:my-10" width="w-48" height="h-1" />
 
