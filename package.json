@@ -13,6 +13,7 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-static": "^2.0.1",
 		"@sveltejs/kit": "^1.5.0",
+		"@types/mysql": "^2.15.21",
 		"autoprefixer": "^10.4.14",
 		"postcss": "^8.4.21",
 		"svelte": "^3.54.0",
@@ -29,6 +30,6 @@
 		"classnames": "^2.3.2",
 		"flowbite": "^1.6.4",
 		"flowbite-svelte": "^0.34.2",
-		"mysql": "^2.18.1"
+		"mysql2": "^3.2.0"
 	}
 }
