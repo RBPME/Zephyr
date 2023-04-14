@@ -10,4 +10,12 @@ export var db = mysql.createConnection({
 db.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
+  db.query("INSERT INTO Users (id, name, pass, email) VALUES ('1', 'Rasmus', '1234', 'email@gmail.com')", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+  db.query("SELECT * FROM Users", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
 });
