@@ -120,6 +120,15 @@ export const actions = {
             return fail(400, { user: true });
         }
 
+        //Check if email is available
+        const mailuser = await db.user.findUnique({
+            where: { email: mail }
+        });
+
+        if (mailuser) {
+            return fail(400, { usedmail: true});
+        }
+
 
         //Create a user
         const createdUser = await db.user.create({
