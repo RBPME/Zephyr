@@ -1,10 +1,17 @@
 <script>
-  import '../app.css';
-
-  import { DarkMode } from 'flowbite-svelte';
-
-  let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2 md:mt-64 absolute top-4 right-4 md:top-auto md:right-auto md:bottom-4 md:left-4';
+  import "../app.css";
 </script>
 
+<svelte:head>
+  <script>
+    if (window) {
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ? window.document.documentElement.classList.add("dark")
+        : window.document.documentElement.classList.remove("dark");
+    }
+  </script>
+</svelte:head>
+
 <slot />
-<DarkMode {btnClass}/>

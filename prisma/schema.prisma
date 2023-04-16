@@ -11,5 +11,19 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid())
+  id            String  @id @default(uuid())
+  email         String  @unique
+  username      String  @unique
+  passwordHash  String
+  userAuthToken String  @unique
+  alarms        Alarm[]
+}
+
+model Alarm {
+  id        Int      @id @default(autoincrement())
+  time      DateTime
+  recurring Boolean
+  days      String?
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?
 }
