@@ -30,7 +30,6 @@ export const load: PageServerLoad = async ({ locals, cookies }) => {
 export const actions: Actions = {
     default: async ({ request, cookies }) => {
         const key = await request.json();
-        console.log(request.headers.get('headerMessage'));
 
         if (request.headers.get('headerMessage') == '0') {
             if (

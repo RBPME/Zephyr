@@ -14,7 +14,6 @@
   import { invalidateAll } from "$app/navigation";
 
   export let data: PageData;
-  console.log(data);
 
   const call = async (e: string, del: string) => {
     const response = await fetch("/Enheder", {
