@@ -1,14 +1,10 @@
-// @ts-ignore
-import { API_BASE } from '$env/static/private';
 import { db } from '$lib/server/database';
-import bcrypt from 'bcrypt';
 
 
 export const GET = async ({ request }) => {
     if (request.headers.get('register') === 'true') {
         //create new api key
         const now = new Date().getTime();
-        const apiKey = await bcrypt.hash(API_BASE + now,10);
 
         //add device in database
         // @ts-ignore
