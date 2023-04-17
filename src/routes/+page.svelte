@@ -2,6 +2,7 @@
   import { Alert, Modal } from "flowbite-svelte";
   import type { ActionData } from "./$types";
   import { enhance } from "$app/forms";
+  import { enhance } from "$app/forms";
 
   export let form: ActionData;
   let login = true;
@@ -11,6 +12,13 @@
 <Modal bind:open={login} size="xs" permanent={true} class="w-full h-min">
   <form method="POST" action="?/login" class="flex flex-col" use:enhance>
     <div class="mb-6">
+      {#if form?.invalid}
+        <Alert color="red" dismissable>Alle felter skal udfyldes rigtigt.</Alert
+        >
+      {/if}
+      {#if form?.credentials}
+        <Alert color="red" dismissable>Forkert Email eller password.</Alert>
+      {/if}
       <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">
         Log ind
       </h3>
@@ -79,6 +87,17 @@
 <Modal bind:open={signup} size="xs" permanent={true} class="w-full h-min">
   <form method="POST" action="?/register" class="flex flex-col" use:enhance>
     <div class="mb-6">
+      {#if form?.invalid}
+        <Alert color="red" dismissable>
+          Alle felter skal udfyldes rigtigt.
+        </Alert>
+      {/if}
+      {#if form?.user}
+        <Alert color="red" dismissable>Brugernavn er allerede i brug.</Alert>
+      {/if}
+      {#if form?.usedmail}
+        <Alert color="red" dismissable>Email er allerede i brug.</Alert>
+      {/if}
       <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">
         Lav en konto
       </h3>
