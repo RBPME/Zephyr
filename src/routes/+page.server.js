@@ -69,7 +69,9 @@ export const actions = {
             sameSite: 'strict',
 
             //Set cookie to expire after a month
-            maxAge: 60 * 60 * 24 * 30
+            maxAge: 60 * 60 * 24 * 30,
+
+            secure: false
         });
 
 
@@ -120,6 +122,15 @@ export const actions = {
             return fail(400, { user: true });
         }
 
+        //Check if email is available
+        const usermail = await db.user.findUnique({
+            where: { email: mail }
+        });
+
+        if (usermail) {
+            return fail(400, { usedmail: true });
+        }
+
 
         //Create a user
         const createdUser = await db.user.create({
@@ -145,7 +156,9 @@ export const actions = {
             sameSite: 'strict',
 
             //Set cookie to expire after a month
-            maxAge: 60 * 60 * 24 * 30
+            maxAge: 60 * 60 * 24 * 30,
+
+            secure: false
         });
 
 

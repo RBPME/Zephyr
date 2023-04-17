@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Alert, Modal } from "flowbite-svelte";
   import type { ActionData } from "./$types";
+  import { enhance } from "$app/forms";
 
   export let form: ActionData;
   let login = true;
@@ -8,12 +9,18 @@
 </script>
 
 <Modal bind:open={login} size="xs" permanent={true} class="w-full h-min">
-  <form method="POST" action="?/login" class="flex flex-col">
+  <form method="POST" action="?/login" class="flex flex-col" use:enhance>
     <div class="mb-6">
       <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">
         Log ind
       </h3>
     </div>
+    {#if form?.invalid}
+      <Alert color="red" dismissable>Alle felter skal udfyldes rigtigt.</Alert>
+    {/if}
+    {#if form?.credentials}
+      <Alert color="red" dismissable>Brugernavn eller password er forkert.</Alert>
+    {/if}
     <div class="mb-6">
       <label
         for="email"
@@ -70,12 +77,21 @@
 </Modal>
 
 <Modal bind:open={signup} size="xs" permanent={true} class="w-full h-min">
-  <form method="POST" action="?/register" class="flex flex-col">
+  <form method="POST" action="?/register" class="flex flex-col" use:enhance>
     <div class="mb-6">
       <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">
         Lav en konto
       </h3>
     </div>
+    {#if form?.invalid}
+      <Alert color="red" dismissable>Alle felter skal udfyldes rigtigt.</Alert>
+    {/if}
+    {#if form?.user}
+      <Alert color="red" dismissable>Brugernavn er allerede i brug.</Alert>
+    {/if}
+    {#if form?.usedmail}
+      <Alert color="red" dismissable>Email er allerede i brug.</Alert>
+    {/if}
     <div class="mb-6">
       <label
         for="email"
@@ -153,10 +169,3 @@
     </div>
   </form>
 </Modal>
-<!--
-{#if form?.user}
-  <Alert color="red" class="z-60" dismissable
-    >Brugernavn er allerede i brug.</Alert
-  >
-{/if}
--->
