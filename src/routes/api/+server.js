@@ -39,7 +39,7 @@ export const GET = async ({ request }) => {
     const alarms = await db.alarm.findMany({ 
         where: {
             // @ts-ignore
-            id: (await device).userId
+            userId: (await device).userId
         },
         orderBy: {
             time: 'desc'
@@ -48,7 +48,7 @@ export const GET = async ({ request }) => {
 
     //check if there is a date
     // @ts-ignore
-    if (!alarms) {
+    if (alarms[0] === undefined || alarms[0] === null) {
         return new Response(JSON.stringify({message: ''}), {status: 200});
     }
 
@@ -92,11 +92,11 @@ export const GET = async ({ request }) => {
             //delete alarm in database
             const deleteAlarm = await db.alarm.delete({
                 // @ts-ignore
-                where: { id: user.alarms[0].id }
+                where: { id: alarms[0].id }
             });
         }
 
-        return new Response(JSON.stringify({message: 'nu'}), {status: 200});
+        return new Response(JSON.stringify({message: 'nu'}), {status: 202});
     }
 
     //return a response if it is not time to ring
