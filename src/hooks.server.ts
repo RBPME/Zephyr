@@ -23,7 +23,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 
         //check if the token corrosponds to a valid user
         if (!user) {
-            console.log('test');
             return false;
         }
 
