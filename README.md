@@ -137,11 +137,11 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Print physical components
-- [ ] Wire up electronics
-- [ ] Program physical project
-- [ ] Implement Google assistant, app and/or web compatibility
-- [ ] Test product
+- [x] Print physical components
+- [x] Wire up electronics
+- [x] Program physical project
+- [x] Program website and api
+- [x] Test product
 - [ ] Write documentation
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
