@@ -1,4 +1,4 @@
-# Projekt 2 
+# Project Zephyr 
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
@@ -25,23 +25,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/RBPME/Projekt-2---Spicy">
+  <a href="https://github.com/RBPME/Pude-server">
     <img src="static/favicon.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Projekt 2</h3>
+  <h3 align="center">Project Zephyr</h3>
 
   <p align="center">
     Smart home Appliance!
     <br />
-    <a href="https://github.com/RBPME/Projekt-2---Spicy"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/RBPME/Pude-server"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/RBPME/Projekt-2---Spicy">View Demo</a>
+    <a href="https://github.com/RBPME/Pude-server">View Demo</a>
     ·
-    <a href="https://github.com/RBPME/Projekt-2---Spicy/issues">Report Bug</a>
+    <a href="https://github.com/RBPME/Pude-server/issues">Report Bug</a>
     ·
-    <a href="https://github.com/RBPME/Projekt-2---Spicy/issues">Request Feature</a>
+    <a href="https://github.com/RBPME/Pude-server/issues">Request Feature</a>
   </p>
 </div>
 
@@ -78,9 +78,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+When sleeping, it is often practical, or even necessary to wake up at a certain time. For years the standard way to guarantee waking up at a certain time has been using an alarm clock. However using loud nosies to wake up has drawbacks. When an alarm clocks rings you risk waking other people. That is why we need to rethink the alarm clock.
 
-Your time in the kitchen is valuable, that's why you shouldn't waste it looking through spices and seasoning just to find out your have no thyme left. We have opted to instead create an appliance that automatically finds exactly what you need for you. Just tell it which spices you want it will give them to you.
+Project Zephyr moves the alarm clock in to your pillow. When it is time to wake up, your pillow will begin to vibrate, gently waking you up. This ensures, not only, that you avoid waking other people, but also that you wake up gently. The vibrations are unnoticable to other people, and the technology will not disturb your sleep.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
