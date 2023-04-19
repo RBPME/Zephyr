@@ -89,9 +89,8 @@ Project Zephyr moves the alarm clock in to your pillow. When it is time to wake 
 ### Built With
 
 * [![Arduino][Arduino.dev]][Arduino-url]
-* [![Flutter][Flutter.dev]][Flutter-url]
-* [![Vite][Vite.dev]][Vite-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
+* [![Prisma][Prisma.dev]][Prisma-url]
 * [![Tailwind][Tailwind.dev]][Tailwind-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -183,13 +182,11 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
-[Flutter.dev]: https://img.shields.io/badge/flutter-8391ec?style=for-the-badge&logo=flutter&logoColor=white
-[Flutter-url]: https://flutter.dev/
 [Svelte.dev]: https://img.shields.io/badge/svelte-ff3e00?style=for-the-badge&logo=svelte&logoColor=white
 [Svelte-url]: https://svelte.dev/
-[Vite.dev]: https://img.shields.io/badge/vite-8975fe?style=for-the-badge&logo=vite&logoColor=white
-[Vite-url]: https://vitejs.dev/
 [Tailwind.dev]: https://img.shields.io/badge/tailwind-07b6d5?style=for-the-badge&logo=tailwindcss&logoColor=white
 [Tailwind-url]: https://tailwindcss.com/
 [Arduino.dev]: https://img.shields.io/badge/arduino-00979c?style=for-the-badge&logo=arduino&logoColor=white
 [Arduino-url]: https://www.arduino.cc/
+[Prisma.dev]: https://img.shields.io/badge/Prisma-20242c?style=for-the-badge&logo=prisma&logoColor=white
+[Prisma-url]: https://www.prisma.io/
