@@ -1,20 +1,34 @@
 <script>
+  import '../../app.css';
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import {
     Sidebar,
+    SidebarBrand,
     SidebarGroup,
     SidebarItem,
     SidebarWrapper,
     BottomNav,
     BottomNavItem,
+    DarkMode
   } from "flowbite-svelte";
+  import 'carbon-components-svelte/css/white.css';
   $: activeUrl = $page.url.pathname;
+
+  let site = {
+    name: 'Zephyr',
+    href: '/Alarm',
+    img: '/favicon.png'
+  };
+
+
+  let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2 md:mt-64 fixed top-4 right-4 md:top-auto md:right-auto md:bottom-4 md:left-4';
 </script>
 
 <Sidebar class="hidden md:inline">
   <SidebarWrapper class="fixed w-64 h-screen top-0">
     <SidebarGroup>
+      <SidebarBrand {site} />
       <SidebarItem
         label="Alarmer"
         href="/Alarm"
@@ -159,3 +173,7 @@
     </BottomNavItem>
   </BottomNav>
 </div>
+<div class="md:ml-64 w-auto pt-4">
+  <slot />
+</div>
+<DarkMode {btnClass}/>

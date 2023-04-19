@@ -63,7 +63,18 @@ export const actions: Actions = {
         }
         
         let alarm = new Date()
-        //alarm.setDate(alarm.getDate() + 1);
+
+        if (form.get('datepick')) {
+            // @ts-ignore
+            alarm.setDate(+form.get('datepick')?.slice(0,2));
+            // @ts-ignore
+            alarm.setMonth(+form.get('datepick')?.slice(3,5) - 1);
+            // @ts-ignore
+            alarm.setFullYear(+form.get('datepick')?.slice(6,10));
+        } else {
+            //alarm.setDate(alarm.getDate() + 1);
+        }
+
         alarm.setHours(hrs);
         alarm.setMinutes(min);
 
