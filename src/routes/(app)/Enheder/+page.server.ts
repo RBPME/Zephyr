@@ -29,16 +29,20 @@ export const load: PageServerLoad = async ({ locals, cookies }) => {
 
 export const actions: Actions = {
     default: async ({ request, cookies }) => {
+        //get device id
         const key = await request.json();
 
+        //check if the user wants to connect to device
         if (request.headers.get('headerMessage') == '0') {
+            //validate the http body
             if (
                 typeof key.e !== 'string' ||
                 !key.e
             ) {
                 return fail(400, { invalid: true });
             }
-    
+            
+            //connect the user to device
             const connectDevice = await db.user.update({
                 where: { userAuthToken: cookies.get('session') },
                 data: {
@@ -50,6 +54,7 @@ export const actions: Actions = {
                 }
             });
         } else if (request.headers.get('headerMessage') == '1') {
+            //validate the http body
             if (
                 typeof key.e !== 'string' ||
                 !key.e
@@ -57,6 +62,7 @@ export const actions: Actions = {
                 return fail(400, {invalid: true});
             }
 
+            //dicsonnect the user from device
             const disconnectDevice = await db.user.update({
                 where: { userAuthToken: cookies.get('session') },
                 data: {

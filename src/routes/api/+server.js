@@ -8,8 +8,6 @@ export const GET = async ({ request }) => {
 
     if (request.headers.get('register') === 'true') {
         console.log('register: true');
-        //create new api key
-        const now = new Date().getTime();
 
         //add device in database
         // @ts-ignore

@@ -25,7 +25,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/RBPME/Pude-server">
+  <a href="https://github.com/RBPME/Zephyr">
     <img src="static/favicon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -34,14 +34,14 @@
   <p align="center">
     Smart home Appliance!
     <br />
-    <a href="https://github.com/RBPME/Pude-server"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/RBPME/Zephyr"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/RBPME/Pude-server">View Demo</a>
+    <a href="https://github.com/RBPME/Zephyr">View Demo</a>
     ·
-    <a href="https://github.com/RBPME/Pude-server/issues">Report Bug</a>
+    <a href="https://github.com/RBPME/Zephyr/issues">Report Bug</a>
     ·
-    <a href="https://github.com/RBPME/Pude-server/issues">Request Feature</a>
+    <a href="https://github.com/RBPME/Zephyr/issues">Request Feature</a>
   </p>
 </div>
 
@@ -144,7 +144,7 @@ _Below is an example of how you can instruct your audience on installing and set
 - [x] Test product
 - [ ] Write documentation
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/RBPME/Zephyr/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
