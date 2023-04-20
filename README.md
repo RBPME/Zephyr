@@ -88,7 +88,7 @@ Project Zephyr moves the alarm clock in to your pillow. When it is time to wake 
 
 ### Built With
 
-* [![Arduino][Arduino.dev]][Arduino-url]
+* [![ESP][ESP.dev]][ESP-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Prisma][Prisma.dev]][Prisma-url]
 * [![Tailwind][Tailwind.dev]][Tailwind-url]
@@ -186,7 +186,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [Svelte-url]: https://svelte.dev/
 [Tailwind.dev]: https://img.shields.io/badge/tailwind-07b6d5?style=for-the-badge&logo=tailwindcss&logoColor=white
 [Tailwind-url]: https://tailwindcss.com/
-[Arduino.dev]: https://img.shields.io/badge/arduino-00979c?style=for-the-badge&logo=arduino&logoColor=white
-[Arduino-url]: https://www.arduino.cc/
+[ESP.dev]: https://img.shields.io/badge/ESP-e7352c?style=for-the-badge&logo=Espressif&logoColor=white
+[ESP-url]: https://www.espressif.com/
 [Prisma.dev]: https://img.shields.io/badge/Prisma-20242c?style=for-the-badge&logo=prisma&logoColor=white
 [Prisma-url]: https://www.prisma.io/
