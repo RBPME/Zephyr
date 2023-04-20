@@ -140,7 +140,7 @@ _Below is an example of how you can instruct your audience on installing and set
 - [x] Print physical components
 - [x] Wire up electronics
 - [x] Program physical project
-- [x] Program website and api
+- [x] Program website and API
 - [x] Test product
 - [ ] Write documentation
 
