@@ -1,5 +1,5 @@
 <script>
-  import '../../app.css';
+  import "../../app.css";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import {
@@ -10,19 +10,19 @@
     SidebarWrapper,
     BottomNav,
     BottomNavItem,
-    DarkMode
+    DarkMode,
   } from "flowbite-svelte";
-  import 'carbon-components-svelte/css/white.css';
+  import "carbon-components-svelte/css/white.css";
   $: activeUrl = $page.url.pathname;
 
   let site = {
-    name: 'Zephyr',
-    href: '/Alarm',
-    img: '/favicon.png'
+    name: "Zephyr",
+    href: "/Alarm",
+    img: "/favicon.png",
   };
 
-
-  let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2 md:mt-64 fixed top-4 right-4 md:top-auto md:right-auto md:bottom-4 md:left-4';
+  let btnClass =
+    "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2 md:mt-64 fixed top-4 right-4 md:top-auto md:right-auto md:bottom-4 md:left-4";
 </script>
 
 <Sidebar class="hidden md:inline">
@@ -130,7 +130,7 @@
         /></svg
       >
     </BottomNavItem>
-    <BottomNavItem btnName="Placeholder">
+    <!--<BottomNavItem btnName="Placeholder">
       <svg
         class="w-6 h-6 dark:fill-slate-200"
         xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +141,7 @@
           d="M180 936q-25 0-42.5-17.5T120 876v-76l160-142v278H180Zm140 0V776h320v160H320Zm360 0V608L509 456l121-107 190 169q10 9 15 20.5t5 24.5v313q0 25-17.5 42.5T780 936H680ZM120 746V563q0-13 5-25t15-20l300-266q8-8 18.5-11.5T480 237q11 0 21.5 3.5T520 252l80 71-480 423Z"
         /></svg
       >
-    </BottomNavItem>
+    </BottomNavItem>-->
     <BottomNavItem
       btnName="Indstillinger"
       on:click={() => goto("/Indstillinger")}
@@ -157,9 +157,21 @@
         /></svg
       >
     </BottomNavItem>
+    <BottomNavItem btnName="Log ud" on:click={() => goto("/Logout")}>
+      <svg
+        class="w-6 h-6 dark:fill-slate-200"
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        viewBox="0 96 960 960"
+        width="48"
+        ><path
+          d="M180 936q-24 0-42-18t-18-42V276q0-24 18-42t42-18h291v60H180v600h291v60H180Zm486-185-43-43 102-102H375v-60h348L621 444l43-43 176 176-174 174Z"
+        /></svg
+      >
+    </BottomNavItem>
   </BottomNav>
 </div>
 <div class="md:ml-64 w-auto pt-4">
   <slot />
 </div>
-<DarkMode {btnClass}/>
+<DarkMode {btnClass} />
