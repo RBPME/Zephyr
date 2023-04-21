@@ -37,8 +37,6 @@
     <a href="https://github.com/RBPME/Zephyr"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/RBPME/Zephyr">View Demo</a>
-    ·
     <a href="https://github.com/RBPME/Zephyr/issues">Report Bug</a>
     ·
     <a href="https://github.com/RBPME/Zephyr/issues">Request Feature</a>

@@ -2,10 +2,6 @@ import { db } from '$lib/server/database';
 
 
 export const GET = async ({ request }) => {
-    console.log('');
-    console.log('Recieved request');
-    console.log(new Date());
-
     if (request.headers.get('register') === 'true') {
         console.log('register: true');
 
@@ -14,16 +10,13 @@ export const GET = async ({ request }) => {
         const device = db.device.create({ data: {} });
 
         //return api key
-        console.log('returned api-key:' + (await device).id);
         return await new Response(JSON.stringify({message: (await device).id}), {status: 200});
     }
-    console.log('api-key:' + request.headers.get('api-key'));
 
     //recieve api key from HTTP request
     const authHeader =  request.headers.get('api-key');
 
     if (!authHeader) {
-        console.log(new Response(JSON.stringify({Message: 'Invalid credentials'}), {status: 401}));
         return new Response(JSON.stringify({message: 'Invalid credentials'}), {status: 401});
     }
 
@@ -32,13 +25,11 @@ export const GET = async ({ request }) => {
 
     //check if api key is valid
     if (!device) {
-        console.log(new Response(JSON.stringify({Message: 'Invalid credentials'}), {status: 401}));
         return new Response(JSON.stringify({message: 'Invalid credentials'}), {status: 401});
     }
 
     //check if a user is connected to the device
     if (!device.userId) {
-        console.log(new Response(JSON.stringify({Message: ''}), {status: 200}));
         return new Response(JSON.stringify({message: ''}), {status: 200});
     }
 
@@ -56,7 +47,6 @@ export const GET = async ({ request }) => {
     //check if there is a date
     // @ts-ignore
     if (alarms[0] === undefined || alarms[0] === null) {
-        console.log(new Response(JSON.stringify({Message: ''}), {status: 200}));
         return new Response(JSON.stringify({message: ''}), {status: 200});
     }
 
@@ -104,11 +94,9 @@ export const GET = async ({ request }) => {
             });
         }
 
-        console.log(new Response(JSON.stringify({Message: 'nu'}), {status: 202}));
         return new Response(JSON.stringify({message: 'nu'}), {status: 202});
     }
 
     //return a response if it is not time to ring
-    console.log(new Response(JSON.stringify({Message: ''}), {status: 200}));
     return new Response(JSON.stringify({Message: ''}), {status: 200});
 }
