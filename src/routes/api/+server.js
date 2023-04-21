@@ -3,8 +3,6 @@ import { db } from '$lib/server/database';
 
 export const GET = async ({ request }) => {
     if (request.headers.get('register') === 'true') {
-        console.log('register: true');
-
         //add device in database
         // @ts-ignore
         const device = db.device.create({ data: {} });
